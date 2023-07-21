@@ -58,7 +58,12 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
         $this->data = [
             'siteName' => getSetSettings('App.siteName'),
-            'PageName' => service('settings')->get('App.Name') ? service('settings')->get('App.Name'): APP->NAME
+            'PageName' => service('settings')->get('App.Name') ? service('settings')->get('App.Name'): APP->NAME,
+            'loadDatatables' => false,
+            'datatablespdfmake' => false,
+            'datatablesDefault' => true,
+            'tomSelect' => false,
+            'tomselectDefault' => true,
         ];
         // $this->data['siteName'] = getSetSettings('App.siteName');
         // $this->parser = \Config\Services::parser();

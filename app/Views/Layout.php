@@ -260,7 +260,35 @@
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/libraries/jQuery/jquery-3.7.0.min.js"></script>
 
-    <script></script>
+    <link href="/assets/libraries/Sweetalert/sweetalert2.min.css" rel="stylesheet">
+    <script src="/assets/libraries/Sweetalert/sweetalert2.all.min.js"></script>
+    <script>
+        function alert(title, type = 'info', message = null) {
+            var options = {
+                title: title,
+                icon: type
+            };
+            if (message) {
+                options.html = message;
+            }
+            return Swal.fire({
+                ...options
+            });
+        }
+    </script>
+
+    <?php if ($loadDatatables) {
+        echo view('Libraries/Datatables');
+        if ($datatablesDefault) {
+            echo view('Libraries/DatatablesDefault');
+        }
+    } ?>
+    <?php if ($tomSelect) {
+        echo view('Libraries/TomSelect');
+        if ($tomselectDefault) {
+            echo view('Libraries/TomSelectDefault');
+        }
+    } ?>
 
     <?= $this->renderSection('javascript') ?>
 </body>

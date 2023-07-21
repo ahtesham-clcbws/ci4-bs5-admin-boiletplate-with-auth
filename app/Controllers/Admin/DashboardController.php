@@ -12,6 +12,8 @@ class DashboardController extends BaseController
     {
         // $this->addTestUser();
         $this->data['PageName'] = 'Dashboard';
+        $this->data['loadDatatables'] = true;
+        $this->data['tomSelect'] = true;
         if ($this->request->getPost()) {
             if ($this->request->getPost('dashboard_search')) {
                 return $this->searchQuery($this->request->getPost('dashboard_search'));
